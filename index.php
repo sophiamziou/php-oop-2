@@ -35,7 +35,7 @@ include __DIR__ . '/database.php';
                 ?>
                 <div class="col-3">
                     <div class="card h-75">
-                        <img src=" <?php echo $value->image ?>" class="card-img-top h-50" alt="...">
+                        <img src=" <?php echo $value->image ?>" class="card-img-top h-50" alt="image not found">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <?php
