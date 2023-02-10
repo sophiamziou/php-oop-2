@@ -20,40 +20,40 @@ include __DIR__ . '/database.php';
 
 <body>
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <h1>BOOLSHOP</h1>
-                    <h3>I nostri prodotti</h3>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container py-5">
+            <h3>I nostri prodotti</h3>
             <div class="row m-4">
                 <?php
-                    foreach ($array_products as $key => $value) {
+                foreach ($array_products as $key => $value) {
                 ?>
-                <div class="col-3">
-                    <div class="card h-75">
-                        <img src=" <?php echo $value->image ?>" class="card-img-top h-50" alt="image not found">
+                <div class="col-3 g-4">
+                    <div class="card h-100">
+                        <img src=" <?php echo $value->image ?>" class="card-img-top h-75 p-2" alt="image not found">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <?php
-                                echo $value->name;
-                                ?>
+                                    echo $value->name;
+                                    ?>
                             </h5>
                             <p class="card-text">
 
                             <p>
-                                <i class="fa-solid fa-paw"></i>
                                 <?php
-                                echo $value->category;
-                                ?>
+                                    echo icon($value->category) . " ";
+                                    echo $value->category;
+                                    ?>
                             </p>
                             <p>
                                 <?php
-                               echo $value->price.' €' ;
-                                ?>
+                                    echo $value->price . ' €';
+                                    ?>
                             </p>
                             <?php if ($value->getType() == 'Food') { ?>
                             <p>
@@ -83,7 +83,7 @@ include __DIR__ . '/database.php';
                         </div>
                     </div>
                 </div>
-                <?php }?>
+                <?php } ?>
             </div>
         </div>
     </main>
